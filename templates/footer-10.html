@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	<meta name="description" content="SportsZone is an HTML5/CSS3 eCommerce template that is best for Sports Items/Tools, any kind of stores Like Sports Store, Bike and Cycle Parts, Hardware, Toos, Construction Item."/>
+	<meta property="og:title" content="SportsZone - Sports Template"/>
+	<meta property="og:description" content="SportsZone is an HTML5/CSS3 eCommerce template that is best for Sports Items/Tools, any kind of stores Like Sports Store, Bike and Cycle Parts, Hardware, Toos, Construction Item." />
+	<meta property="og:image" content="http://sportszone.dexignlab.com/xhtml/social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- Favicons Icon -->
+	<link rel="icon" href="../static/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.png" />
+	
+	<!-- Page Title Here -->
+	<title>slot-test</title>
+
+	<!-- Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--[if lt IE 9]>
+        <script src="../static/js/html5shiv.min.js"></script>
+        <script src="../static/js/respond.min.js"></script>
+	<![endif]-->
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="../static/css/plugins.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style.min.css">
+	<link rel="stylesheet" type="text/css" class="skin" href="../static/css/skin/skin-1.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/templete.min.css">
+
+
+
+
+	       <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
+<!-- Bootstrap core CSS -->
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- Material Design Bootstrap -->
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet"> -->
+
+
+
+	<style>
+		.slot{
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.274);
+			border: 1px solid rgba(0, 0, 0, 0.349);
+			color: black;
+			font-weight: 1000;
+			font-style: oblique;
+			padding-top: 8px;
+			font-size: 90%;
+			width: 180px;
+			padding-top: 15px;
+			box-shadow: inset 5px -5px 10px 10px rgba(0, 0, 0, 0.2)
+		}
+
+		.booked{
+			background-color: rgba(73, 20, 20, 0.253) !important;
+			
+		}
+
+		.time-slot{
+			cursor: pointer;
+		}
+
+		#calender-1{
+			display: flex;
+			max-width: 100vw;
+			margin: auto;
+			overflow-x: scroll;
+			
+		}
+
+		#timeslots{
+			position:absolute;
+			*position: relative; /*ie7*/
+			background-color: rgb(114, 110, 110);
+			color: white !important;
+		}
+
+		#timeslots .slot{
+			color: white
+		}
+		.header{
+			height: 60px;
+			font-weight: 1000 !important;
+			font-style: normal;
+			padding-top: 5px;
+			color: rgb(17, 17, 92);
+		}
+
+
+		.night-slots{
+			writing-mode: vertical-lr;
+			text-orientation: upright;
+			position: relative;
+			z-index: 999;
+			background-color: rgb(18, 18, 129);
+			color: white;    
+			padding: 71px 5px;
+			top:129px;
+			left: -1.2%;
+		}
+
+		@media only screen and (max-width: 600px) {
+			
+			.slot{
+				height: 50px;
+				background-color: rgba(0, 0, 0, 0.274);
+				border: 1px solid rgba(0, 0, 0, 0.349);
+				color: black;
+				font-weight: 1000;
+				font-style: oblique;
+				
+				font-size: 80%;
+				width: 120px;
+				padding-top: 15px;
+			}
+			.header{
+				height: 60px;
+				font-weight: 1000 !important;
+				font-style: normal;
+			}
+
+			.night-slots{
+				writing-mode: vertical-lr;
+				text-orientation: upright;
+				position: absolute;
+				z-index: 999;
+				background-color: rgb(18, 18, 129);
+				color: white;    
+				padding: 92px 1px;
+				top:120px;
+				left: 1%;
+				font-size: 80%;
+			}
+
+			#calender-1{
+				display: flex;
+				max-width: 100vw;
+				margin: auto;
+				overflow-x: scroll;
+				
+				
+			}
+		  }
+
+		  
+		
+	</style>
+
+
+</head>
+<body id="bg" >
+<div class="page-wraper">
+    <!-- header -->
+	{% include 'navbar-layout.html' %}   
+	<!-- header END -->
+    <!-- Content -->
+    <div class="page-content bg-white" >
+        <!-- inner page banner -->
+        <div class="dez-bnr-inr overlay-black-middle" style="background-image:url(images/background/bg4.jpg);">
+            <div class="container">
+                <div class="dez-bnr-inr-entry">
+                    <h1 class="text-white">Book a slot</h1>
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- Breadcrumb row -->
+        <div class="breadcrumb-row">
+            <div class="container">
+                <ul class="list-inline">
+                    <li><a href="../static/#">Home</a></li>
+                    <li>Footer 10</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb row END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Our Awesome Services -->
+            <div class="section-full bg-white content-inner">
+                <div class="container" >
+                    <div class="section-content">
+                        <div class="row">
+                            <div class="col-lg-12 text-center section-head">
+								<h3 class="h3">Book now</h3>
+								<div class="dez-separator bg-primary"></div>
+                                <div class="clear"></div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the been when an unknown printer.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <!-- ##################################################################### -->
+						  <div class="container mt-4">
+							<div style="" class="mb-2 d-flex justify-content-end pt-4 container px-4">
+								<h4 class="mt-3 h5 mx-2 "><span id="slot_count">0</span> Slots Seleted</h4>
+								<button id="bookingbtn"  class="btn btn-sm btn-success" disabled>Confirm Booking</button>
+							</div>
+							
+							<br><br>
+							<div id="calender-1" class=""></div>
+						  
+						</div>
+
+						 
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Awesome Services END -->
+    </div>
+    <!-- Content END-->
+    <!-- Footer -->
+	{% include 'footer-layout.html' %} 
+    <!-- Footer END-->
+    <!-- scroll top button -->
+    <button class="scroltop fa fa-chevron-up" ></button>
+</div>
+<!-- JavaScript  files ========================================= -->
+<script src="../static/js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
+<script src="../static/plugins/bootstrap/js/popper.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="../static/plugins/bootstrap/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="../static/plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
+<script src="../static/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
+<script src="../static/plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
+<script src="../static/plugins/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
+<script src="../static/plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="../static/plugins/countdown/jquery.countdown.js"></script><!-- COUNTDOWN JS -->
+<script src="../static/plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
+<script src="../static/plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
+<script src="../static/plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
+<script src="../static/plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
+<script src="../static/js/dz.ajax.js"></script><!-- CONTACT JS  -->
+
+<script src="../static/js/custom.min.js"></script><!-- CUSTOM FUCTIONS  -->
+<script src="../static/js/dz.carousel.min.js"></script><!-- SORTCODE FUCTIONS  -->
+
+
+
+
+
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     
+
+
+
+<script>
+             
+	var time_slots = [
+						"12:00 AM",
+						"01:00 AM",
+						"02:00 AM",
+						"03:00 AM",
+						"04:00 AM",
+						"05:00 AM",
+						"06:00 AM",
+						"07:00 AM",
+						"08:00 AM",
+						"09:00 AM",
+						"10:00 AM",
+						"11:00 AM",
+						"12:00 PM",
+						"01:00 PM",
+						"02:00 PM",
+						"03:00 PM",
+						"04:00 PM",
+						"05:00 PM",
+						"06:00 PM",
+						"07:00 PM",
+						"08:00 PM",
+						"09:00 PM",
+						"10:00 PM",
+						"11:00 PM"
+						]
+
+	var days = [
+		
+	]
+
+	var week_days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+	
+
+	
+	for(x=-1; x < 10; x++){
+		var someDate = new Date();
+		var numberOfDaysToAdd = x;
+		var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+		var newdate = new Date(result)
+		days.push(week_days[newdate.getDay()] + " " +newdate.getDate() + "/" + (parseInt(newdate.getMonth()) + 1) + "/" + newdate.getFullYear())
+
+	}
+
+	var booked = [
+	"12:00 AM Sunday 30/1/2022",
+	"01:00 AM Sunday 30/1/2022",
+	]
+	
+
+	class Calender {
+		constructor(id,slots, days) {
+			this.slots = slots;
+			this.days = days;
+			this.calender = $("#" + id);
+		}
+		// Getter
+		get availableSlots() {
+			return this.slots;
+		}
+
+		// Method
+		TimeSlots(slot, i) {
+			return `<div class=' text-center slot'>${slot}</div>
+					`
+		}
+
+
+
+
+		
+
+		UnAvailableSlots(fulldate) {
+			return `<div  title='${fulldate}' class='text-center slot time-slot booked' style='cursor: not-allowed'><i class="fas fas fa-check text-success" style='font-size:22px' ></i></div>
+					`
+		}
+
+		
+		AvailableSlots(fulldate) {
+			return `<div id='${fulldate.split(" ").join("_").split("/").join("_").split(":").join("_")}'  onclick='CheckAvaialble(this.id)' title='${fulldate}' class='available text-center slot time-slot'><i class="fas fa-plus-circle text-light" style='font-size:22px' ></i></div>
+					`
+		}
+					  
+		build() {
+
+		//create header
+
+	   // this.calender.append(`<div class='slot'>Slots</div>`)
+
+		//create time slots
+
+		this.calender.append(`<div id='timeslots' class='p-0  '>
+					<div class='text-center slot header  pt-3 m-0'><h5 class='text-white m-0 h-5 header'>Time</h5></div>
+		</div>`)
+		for(var x in this.slots){
+			
+			$("#timeslots").append(this.TimeSlots(this.slots[x], x))
+
+		}
+
+
+		//create days
+		for(x in this.days){
+
+			this.calender.append(`<div id='day_${x}' class='p-0  '>
+
+					<div class='slot text-center header'>
+						<h5 class='m-0 p-0 h5' >${this.days[x].split(" ")[0]}</h5>
+						<p>${this.days[x].split(" ")[1]}</p>
+					
+					</div>
+
+			</div>`)
+
+			for(var y in this.slots){
+				
+				var fulldate = this.slots[y] + " " + this.days[x]
+
+				if( booked.includes(fulldate) ){
+
+				   var slotCard = this.UnAvailableSlots(fulldate)
+
+				}else{
+
+					var slotCard = this.AvailableSlots(fulldate)
+
+				}
+
+				$("#day_" + x).append(slotCard)
+			}
+		}
+
+
+		
+
+
+
+	}
+
+}
+
+var booked_slots = []
+
+function CheckAvaialble(id){
+	
+	var item = $("#" + id)
+	if(item.hasClass("available")){
+		
+		item.addClass("unavailable pt-1 bg-success")
+		item.removeClass("available")
+		var d = item.attr("title").split(" ")
+		d.pop()
+		d[0] = d[0].split(":")[0]
+		d[2] = d[2].slice(0,3)
+		d = d.join(" ")
+		item.html(`<i class="fas fa-minus-circle text-light m-0 p-0" style='font-size:22px' ></i><br><small class='m-0 p-0 text-dark' style='font-weight:1000;position:relative;top:-2px'>${d}</small>`)
+		
+		booked_slots.push(item.attr("title"))
+	}else{
+
+		item.removeClass("unavailable pt-1 bg-success")
+		item.addClass("available")
+		
+		item.html(`<i class="fas fa-plus-circle text-light" style='font-size:22px' ></i>`)
+		
+		var temp = []
+		for(x in booked_slots){
+			if(booked_slots[x] != item.attr("title")){
+				temp.push(booked_slots[x])
+			}
+		}
+
+		booked_slots = temp
+	}
+
+	console.log(booked_slots)
+
+	$("#slot_count").text(booked_slots.length)
+
+	if(booked_slots.length == 0){
+		$("#bookingbtn").prop('disabled', true);
+	}else{
+		$("#bookingbtn").prop('disabled', false);
+	}
+
+}
+var MyCalender =  new Calender("calender-1", time_slots, days)
+	MyCalender.build()
+</script>
+
+
+
+
+</body>
+</html>

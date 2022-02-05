@@ -16,8 +16,15 @@ def admin():
 @app.route('/')
 def home():
      return render_template('index.html')
+####################################################
+@app.route('/footer')
+def footer():
+    return render_template('footer-10.html')
 
-
+@app.route('/book-a-slot')
+def calendar():
+    return render_template('calendar.html')
+####################################################
 @app.route('/bookings')
 def bookings():
     return render_template('bookings.html')
